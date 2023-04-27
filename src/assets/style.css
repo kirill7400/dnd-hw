@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  padding-top: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 350px;
+  height: 600px;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  background-color: gainsboro;
+  overflow: auto;
+}
+
+.card:nth-child(n + 2) {
+  margin-left: 10px;
+}
+
+.delete {
+  margin-left: auto;
+  width: 15px;
+  height: 15px;
+}
+
+.text {
+  pointer-events: none;
+}
+
+.add-task {
+  border: 1px solid green;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 5px;
+  width: 150px;
+  margin: 10px 0 0 30px;
+}
+
+.add-task:hover {
+  border: 1px solid #1d3a0b;
+  background-color: #1d3a0b;
+}
+
+.header {
+  padding: 15px;
+  color: cadetblue;
+  font-family: Cambria sans-serif;
+}
+
+.task {
+  margin: 5px 10px;
+  padding: 15px;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.task-dragged {
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+  width: 270px;
+  border: 1px solid bisque;
+  background-color: bisque;
+  border-radius: 5px;
+  /*transform: rotate(15deg);*/
+}
+
+.grabbing {
+  cursor: grabbing !important;
+}
+
+.grab {
+  cursor: grab;
+}
+
+.temp-div {
+  margin: 5px 10px;
+  padding: 15px;
+  background-color: cadetblue;
+  border: 1px solid cadetblue;
+  border-radius: 5px;
+}
