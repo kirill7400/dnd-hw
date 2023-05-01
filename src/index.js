@@ -17,12 +17,14 @@ const addTask = (e) => {
   delElement.classList.add('delete')
   textElement.classList.add('text')
   div.classList.add('task')
+  div.classList.add('grab')
   delElement.innerHTML = '&#215;'
   textElement.textContent = 'New task!'
 
   div.insertBefore(delElement, null)
   div.insertBefore(textElement, null)
-  e.parentElement.insertBefore(div, e)
+  console.log(e.previousElementSibling)
+  e.previousElementSibling.insertBefore(div, null)
 }
 
 const deleteTask = (e) => {
@@ -52,12 +54,13 @@ const onMouseMove = (e) => {
 }
 
 const onMouseUp = (e) => {
-  if (e.target.parentElement.classList.contains('card'))
+  if (e.target.parentElement.classList.contains('card-body'))
     if (e.clientY <= e.target.offsetTop + e.target.offsetHeight / 2)
       e.target.parentElement.insertBefore(element, e.target)
     else e.target.parentElement.insertBefore(element, e.target.nextSibling)
 
   element.classList.remove('task-dragged')
+  element.style.cssText = ''
   element = undefined
 
   document.documentElement.removeEventListener('mouseup', onMouseUp)
@@ -72,6 +75,7 @@ main.addEventListener('mousedown', (e) => {
     e.preventDefault()
 
     element = e.target
+    console.log(e)
     element.classList.add('task-dragged')
 
     html.classList.add('grabbing')

@@ -67,7 +67,8 @@ body {
   position: absolute;
   z-index: 999;
   pointer-events: none;
-  width: 270px;
+  width: 298px;
+  padding: 15px;
   border: 1px solid bisque;
   background-color: bisque;
   border-radius: 5px;
